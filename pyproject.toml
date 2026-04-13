@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reflective-research-agent"
+version = "0.1.0"
+description = "Self-reflective deep research agent (LangGraph, RAG, web search)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Your Team" }]
+dependencies = [
+    "langgraph>=0.2.55",
+    "langchain-core>=0.3.30",
+    "langchain-community>=0.3.14",
+    "langchain-chroma>=0.1.4",
+    "langchain-text-splitters>=0.3.5",
+    "langchain-ollama>=0.2.3",
+    "chromadb>=0.5.23",
+    "sentence-transformers>=3.0.0",
+    "pypdf>=5.0.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "httpx>=0.28.0",
+    "tenacity>=8.5.0",
+    "duckduckgo-search>=7.3.0",
+    "trafilatura>=1.8.0",
+    "typer>=0.15.0",
+    "rich>=13.9.0",
+]
+
+[project.optional-dependencies]
+web = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+]
+
+[project.scripts]
+research = "reflective_research.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = [
+    "ignore:.*Pydantic V1.*:UserWarning:langchain_core._api.deprecation",
+]

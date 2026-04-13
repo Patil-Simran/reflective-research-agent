@@ -1,0 +1,21 @@
+# Full free stack (install + editable package):
+#   pip install -r requirements.txt
+#   pip install -e . --no-deps
+
+langgraph>=0.2.55
+langchain-core>=0.3.30
+langchain-community>=0.3.14
+langchain-chroma>=0.1.4
+langchain-text-splitters>=0.3.5
+langchain-ollama>=0.2.3
+chromadb>=0.5.23
+sentence-transformers>=3.0.0
+pypdf>=5.0.0
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+httpx>=0.28.0
+tenacity>=8.5.0
+duckduckgo-search>=7.3.0
+trafilatura>=1.8.0
+typer>=0.15.0
+rich>=13.9.0

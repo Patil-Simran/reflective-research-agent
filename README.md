@@ -151,6 +151,4 @@ reflective-research-agent/
 | UI shows backend unavailable | API not listening yet; wait for Uvicorn startup, then check `GET /api/health/ready`. |
 | Mermaid blocks not rendering inline | Model output may be invalid Mermaid; the UI shows the raw source only (no external diagram images). |
 
-## License
 
-MIT
